@@ -10,7 +10,7 @@ Replaces all files with their "(conflicted copy)" version. Useful after changing
 In both cases, your only choice now is to find and change every file to the version that you want. If you've only changed one or two, it's no problem, but if you've changed a lot, or you're part of a big team, this is a nightmare. 
 
 # So what do?
-This simple python script will walk through your entire file-system, starting from the directory it is placed in, and replace the server version with the (conflicted copy) version. It doesn't save the server version, so you'll have to accept that. It just flips the coin so it takes your local version as the desired copy and not the one that's still on the server. 
+This simple python script will walk through your entire file-system, starting from the directory it is placed in, and replace the server version with the (conflicted copy) version if it finds that one exists. It doesn't save the server version, nor check the file timestamps, because those could be messed up through syncing issues. It just flips the cards so Nextcloud takes your local version as the desired copy and not the one that's still on the server. 
 
 ### what?
 
@@ -46,8 +46,8 @@ It's no big deal if you have to change one or two files, but if you have many to
 ```
 
 # Ok how run?
-There's no point cloning the git, just open up a command line and do this:
-
+First, make sure your client is synced and all damage it is going to do has been done.
+After that, just open up a command line and do this:
 ```
 
 ```
