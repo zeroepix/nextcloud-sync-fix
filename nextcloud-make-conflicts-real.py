@@ -11,7 +11,7 @@ total_dir_count = 0
 max_dir_count = 1000
 matching_file_found = []
 no_matching_file_found = []
-for root, dirs, files in os.walk('.\\Nextcloud'):
+for root, dirs, files in os.walk('.'):
 	conflict_found = False
 	conflict_count = 0
 	for file in files:
