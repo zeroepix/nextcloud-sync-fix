@@ -27,20 +27,22 @@ for root, dirs, files in os.walk('.'):
 	if conflict_found:
 		total_dir_count += 1
 		total_conflict_count += conflict_count
-		print('-'*200)
+		print('-'*80)
 		print(f"dir {total_dir_count}: {conflict_count} conflict(s) found:")
 		print(f"\nROOT: {root}\n\nDIRS: {dirs}\n\nFILES: {files}\n")
 	if total_dir_count > max_dir_count:
 		break
 
-print('*'*200)
+print('*'*80)
 print(f"{total_conflict_count} conflicts found in {total_dir_count} directories")
 print(f"Matching files found: {len(matching_file_found)} | Files missing a match: {len(no_matching_file_found)}")
-print('*'*200)
-for cf, gf in matching_file_found:
-	print(f"moving {cf} --> {gf}")
-	try:
-		shutil.move(cf,gf)	
-	except PermissionError:
-		print(f"PERMISSION DENIED. Continuing...")
+print('*'*80)
+doit = input("Do you want to continue? (y/N) ")
+if doit.lower() in ['y','yes']:
+	for cf, gf in matching_file_found:
+		print(f"moving {cf} --> {gf}")
+		try:
+			shutil.move(cf,gf)	
+		except PermissionError:
+			print(f"PERMISSION DENIED. Continuing...")
 print(f"All done. Good luck.")

@@ -46,8 +46,21 @@ It's no big deal if you have to change one or two files, but if you have many to
 ```
 
 # Ok how run?
-First, make sure your client is synced and all damage it is going to do has been done.
-After that, just open up a command line and do this:
+First, make sure your client is synced and all damage it is going to do has been done. Then if you haven't got python installed [do that](https://python.org)
+After that, open up powershell, go to your base Nextcloud folder and then:
+
+### download script manually through...
+#### powershell
+```
+wget https://raw.githubusercontent.com/zeroepix/nextcloud-sync-fix/main/nextcloud-make-conflicts-real.py -OutFile nextcloud-make-conflicts-real.py
+```
+#### or bash
+```
+wget https://raw.githubusercontent.com/zeroepix/nextcloud-sync-fix/main/nextcloud-make-conflicts-real.py
+```
+#### run it
+```
+python nextcloud-make-conflicts-real.py
 ```
 
-```
+It will run through and report what it's doing. After that, Nextcloud should sync your changes and you can carry on carrying on.
